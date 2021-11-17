@@ -1,8 +1,8 @@
 const express = require("express");
-var cors = require("cors");
+const bodyParser = require("body-parser");
 
 const app = express();
-app.use(express.json());
+app.use(bodyParser.json()); // TODO bodyParser is deprecated
 
 const ITEMS = [
   {
@@ -56,10 +56,8 @@ const ITEMS = [
   },
 ];
 
-app.use(cors()); // TODO whitelist specific origins only
-
 app.get("/items", (req, res) => {
-  if (Math.random() >= 0.1) {
+  if (Math.random() >= 0.5) {
     res.json({
       success: true,
       payload: ITEMS,
