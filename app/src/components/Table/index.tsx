@@ -39,7 +39,7 @@ const Table = ({ headings, items, onRowClick }: TableProps) => {
     return (
         <S.Table>
             <thead>
-                <S.HeadingRow>
+                <tr>
                     {headings.map((heading: Heading) => {
                         return (
                             <S.TableHeading
@@ -57,16 +57,16 @@ const Table = ({ headings, items, onRowClick }: TableProps) => {
                             </S.TableHeading>
                         );
                     })}
-                </S.HeadingRow>
+                </tr>
             </thead>
             <tbody>
                 {data.map((item: Item) => {
                     return (
-                        <S.TableRow key={item.id} onClick={() => onRowClick(item)}>
+                        <tr key={item.id} onClick={() => onRowClick(item)}>
                             {headings.map(({ key }) => {
                                 return <S.TableData key={key}>{item[key]}</S.TableData>;
                             })}
-                        </S.TableRow>
+                        </tr>
                     );
                 })}
             </tbody>

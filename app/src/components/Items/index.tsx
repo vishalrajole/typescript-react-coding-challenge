@@ -7,6 +7,7 @@ import { debounce } from "../../utils/debounce";
 import Spinner from "../Spinner";
 import ItemDetails from "../ItemDetails";
 import ModalContext from "../Modal/context";
+import { Message } from "../Message/styles";
 
 interface Item {
   name: string;
@@ -48,7 +49,11 @@ const Items = () => {
         showModal({
             heading: `${item.name}`,
             body: <ItemDetails {...item} />,
-            onClose: fetchItems,
+            onClose: (reason: string) => {
+                if (reason) {
+                    fetchItems();
+                }
+            },
         });
     };
 
@@ -76,6 +81,7 @@ const Items = () => {
             </S.ImageWrapper>
         ),
         status: <S.Bullet status={item.status}>{item.status}</S.Bullet>,
+        statusValue: item.status,
     }));
 
     return (
@@ -88,19 +94,17 @@ const Items = () => {
                     value={searchText}
                 />
                 {showLoader && <Spinner />}
-
-                {isError && !formattedData.length && (
-                    <S.Error>Failed to fetch items</S.Error>
-                )}
-
                 {!formattedData.length && !isError ? (
-                    <div>No data to display</div>
+                    <Message>No data to display</Message>
                 ) : (
                     <Table
                         headings={Headings}
                         items={formattedData}
                         onRowClick={onRowClick}
                     />
+                )}
+                {isError && !formattedData.length && (
+                    <Message type="error">Failed to fetch items</Message>
                 )}
             </>
         </S.Wrapper>

@@ -14,7 +14,7 @@ export const Overlay = styled.div`
 `;
 
 export const ModalWrapper = styled.div`
-  width: 50%;
+  width: 40%;
   position: absolute;
   background: #fff;
   z-index: 2;
@@ -29,7 +29,6 @@ export const ModalHeader = styled.div`
 
 export const ModalContent = styled.div`
   padding: 15px 20px;
-  min-height: 20vh;
   max-height: 80vh;
   overflow-y: auto;
 `;

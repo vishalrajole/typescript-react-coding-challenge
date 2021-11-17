@@ -6,7 +6,7 @@ const GlobalStyle = createGlobalStyle`
     color: #000;
     margin: 0;
     font-size: 16px;
-    font-family: "Trebuchet MS";
+    font-family: system-ui,-apple-system,"Segoe UI",Roboto,"Helvetica Neue",Arial,"Noto Sans";
   }
 `;
 

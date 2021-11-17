@@ -1,12 +1,11 @@
-import React, { useContext, useEffect, ReactChildren } from "react";
-import Button from "../Button";
+import React, {
+    useContext, useEffect, ReactChildren, useRef
+} from "react";
+import useClickOutside from "src/utils/useClickOutside";
+import useEscapePressed from "src/utils/useEscapePressed";
 import ModalContext from "./context";
 import {
-    Overlay,
-    ModalWrapper,
-    ModalHeader,
-    ModalContent,
-    ModalFooter,
+    Overlay, ModalWrapper, ModalHeader, ModalContent
 } from "./styles";
 
 const modalRoot = document.getElementById("modal-root");
@@ -14,13 +13,16 @@ const modalRoot = document.getElementById("modal-root");
 export interface ModalProps {
   heading: string | ReactChildren;
   children: ReactChildren;
-  footer: string | ReactChildren;
-  onClose?: () => void;
+  onClose?: (reason: string) => void;
 }
 
-const Modal = ({ heading, children, footer }: ModalProps) => {
+const Modal = ({ heading, children }: ModalProps) => {
+    const modalRef = useRef(null);
     const { hideModal } = useContext(ModalContext);
     const ele = document.createElement("div");
+
+    useClickOutside({ ref: modalRef, handler: () => hideModal() });
+    useEscapePressed({ handler: () => hideModal() });
 
     useEffect(() => {
         modalRoot?.appendChild(ele);
@@ -31,13 +33,9 @@ const Modal = ({ heading, children, footer }: ModalProps) => {
 
     return (
         <Overlay>
-            <ModalWrapper>
-                <ModalHeader>{heading}</ModalHeader>
+            <ModalWrapper ref={modalRef}>
+                {heading && <ModalHeader>{heading}</ModalHeader>}
                 <ModalContent>{children}</ModalContent>
-                <ModalFooter>
-                    {footer}
-                    <Button onClick={hideModal} label="Close" />
-                </ModalFooter>
             </ModalWrapper>
         </Overlay>
     );

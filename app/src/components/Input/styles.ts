@@ -16,7 +16,7 @@ export const SearchBarWrapper = styled.div`
     height: 34px;
     background: none;
     border: none;
-    padding: 5px 15px 5px 0;
+    padding: 5px 15px;
     outline: 0;
     font-size: 1.2rem;
     color: inherit;

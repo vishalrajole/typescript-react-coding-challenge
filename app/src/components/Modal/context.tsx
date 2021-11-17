@@ -3,7 +3,7 @@ import { createContext } from "react";
 export type ModalContextType = {
   showModal: (data?: any) => void;
   isModalShown?: boolean;
-  hideModal: () => void;
+  hideModal: (reason?: string) => void;
 };
 
 const ModalContext = createContext<ModalContextType>({

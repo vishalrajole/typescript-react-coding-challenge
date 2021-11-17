@@ -1,9 +1,9 @@
 interface IThemeColors {
-    primary: string;
-    secondary: string;
-    text: string;
+  primary: string;
+  secondary: string;
+  text: string;
 }
 
 interface ITheme {
-    theme: IThemeColors;
+  theme: IThemeColors;
 }
