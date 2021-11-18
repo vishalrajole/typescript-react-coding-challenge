@@ -64,7 +64,7 @@ While implementing solution, I fixed some out of the way challeneges/improvement
 
 - removed bodyParser from server as it is deprecated
 - added cors package on backend api & configured for all origins (not a good practice, we should only whitelist specific origins)
-- It is not a recoomended practice to prefix interfaces with I (https://github.com/Microsoft/TypeScript/wiki/Coding-guidelines) so I didn't preferred used it with prefix
+- It is not a recommended practice to prefix interfaces with I (https://github.com/Microsoft/TypeScript/wiki/Coding-guidelines) so I didn't preferred to used it with prefix
 - used react-portal, context api for modal popup
 - used styled-components and it's theme configuration to demonstrate (can be extended more)
 - UI design is minimilistic which can always be extended to perfection 
