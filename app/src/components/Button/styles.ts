@@ -1,6 +1,5 @@
 import styled from "styled-components";
 
-// TODO fix color values from theme
 export const Button = styled.button<{ variant: string }>`
   width: 120px;
   height: 36px;
