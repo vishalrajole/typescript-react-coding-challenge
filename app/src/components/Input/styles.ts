@@ -3,25 +3,22 @@ import { SearchIcon } from "../Icons/Search";
 
 export const SearchBarWrapper = styled.div`
   display: flex;
-  background-color: ${(props) => props.theme.SEARCH_BAR_BG};
-  margin: 15px 0 30px 0;
-  border: 1px solid grey;
-  border-radius: 5px;
+  margin: ${(props) => props.theme.spacing.lg} 0 ${(props) => props.theme.spacing.xl} 0;
+  border: 1px solid ${(props) => props.theme.palette.borderColor}};
+  border-radius:  ${(props) => props.theme.borderRadius}};
 
-  color: ${(props) => props.theme.SEARCH_TEXT};
+  color: ${(props) => props.theme.palette.text.secondary};
   overflow: hidden;
   align-items: center;
   input {
-    width: 100%;
     height: 34px;
     background: none;
     border: none;
-    padding: 5px 15px;
+    padding: ${(props) => `${props.theme.spacing.sm} ${props.theme.spacing.lg}`};
     outline: 0;
     font-size: 1.2rem;
-    color: inherit;
   }
   ${SearchIcon} {
-    padding: 0 15px;
+    padding: ${(props) => `0 ${props.theme.spacing.lg}`};
   }
 `;

@@ -20,5 +20,5 @@ const Up = ({ className }: UpProps) => {
 export const UpIcon = styled(Up)`
   width: 1rem;
   height: 1rem;
-  fill: #fff;
+  fill: ${(props) => props.theme.palette.text.primary};
 `;

@@ -9,10 +9,8 @@ export const SelectWrapper = styled.div`
 export const Select = styled.select`
   height: 40px;
   width: 60%;
-  font-size: 1rem;
 `;
 
 export const Label = styled.label`
-  font-size: 1rem;
-  margin-right: 16px;
+  margin-right: ${(props) => props.theme.spacing.lg};
 `;

@@ -1,13 +1,11 @@
 import styled from "styled-components";
 
-interface MessageProps {
-  type?: string;
-}
-
-export const Message = styled.div`
+export const Message = styled.div<{ type?: string }>`
   display: flex;
   justify-content: center;
-  color: ${(props: MessageProps) => (props.type === "error" ? "red" : "#000")};
-  margin: 20px;
-  padding: 20px;
+  color: ${(props) => (props.type === "error"
+        ? props.theme.palette.error.main
+        : props.theme.palette.text.secondary)};
+  margin: ${(props) => props.theme.spacing.lg};
+  padding: ${(props) => props.theme.spacing.lg};
 `;

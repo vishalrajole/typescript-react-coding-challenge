@@ -34,10 +34,8 @@ const Spinner = ({ className }: SpinnerProps) => {
 };
 
 export const SpinnerIcon = styled(Spinner)`
+  display: flex;
   width: 80px;
   height: 80px;
-  margin: auto;
-  background: rgb(241, 242, 243);
-  display: block;
-  shape-rendering: auto;
+  margin: ${(props) => props.theme.spacing.xl} auto;
 `;

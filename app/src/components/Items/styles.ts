@@ -1,24 +1,24 @@
 import styled from "styled-components";
 
-// TODO improve colors & consume from theme
 export const Bullet = styled.div<{ status: string }>`
   display: inline-flex;
   border-radius: 5px;
-  padding: 3px 5px;
+  padding: ${(props) => `${props.theme.spacing.sm} ${props.theme.spacing.md}`};
   font-size: 14px;
   color: #fff;
-  background: ${({ status }) => {
+  line-height: 1;
+  background: ${({ status, theme }) => {
         switch (status) {
             case "new":
-                return "blue";
+                return theme.palette.primary.main;
             case "done":
-                return "green";
+                return theme.palette.success.main;
             case "processing":
-                return "orange";
+                return theme.palette.warning.main;
             case "error":
-                return "red";
+                return theme.palette.error.main;
             default:
-                return "grey";
+                return theme.palette.secondary.main;
         }
     }};
 `;
@@ -29,10 +29,10 @@ export const ImageWrapper = styled.div`
   height: 80px;
   border-radius: 50%;
   overflow: hidden;
-  background: #e6e6e6;
   align-items: center;
   justify-content: center;
-  color: #666;
+  background: ${(props) => props.theme.palette.grey[100]};
+  color: ${(props) => props.theme.palette.grey[200]};
 
   img {
     width: 100%;
@@ -44,10 +44,10 @@ export const ImageWrapper = styled.div`
 export const Input = styled.input`
   width: 100%;
   height: 40px;
-  padding: 8px;
+  padding: ${(props) => props.theme.spacing.md};
 `;
 
 export const Wrapper = styled.div`
   width: 60%;
-  margin: 30px auto;
+  margin: ${(props) => props.theme.spacing.xl} auto;
 `;

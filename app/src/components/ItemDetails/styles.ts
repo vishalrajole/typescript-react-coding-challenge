@@ -5,7 +5,7 @@ export const ActionsWrapper = styled.div`
   display: flex;
   align-items: center;
   justify-content: space-between;
-  margin-top: 30px;
+  margin-top: ${(props) => props.theme.spacing.xl};
   ${Button} {
     width: 49%;
   }

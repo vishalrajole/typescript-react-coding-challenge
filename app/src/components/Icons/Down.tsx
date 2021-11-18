@@ -21,5 +21,5 @@ const Down = ({ className }: DownProps) => {
 export const DownIcon = styled(Down)`
   width: 1rem;
   height: 1rem;
-  fill: #fff;
+  fill: ${(props) => props.theme.palette.text.primary};
 `;

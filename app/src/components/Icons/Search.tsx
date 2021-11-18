@@ -20,5 +20,5 @@ const Search = ({ className }: SearchProps) => {
 export const SearchIcon = styled(Search)`
   width: 1.5rem;
   height: 1.5rem;
-  fill: ${(props) => props.theme.BASE_ICON_COLOR};
+  fill: ${(props) => props.theme.palette.text.secondary};
 `;
