@@ -69,3 +69,10 @@ While implementing solution, I fixed some out of the way challeneges/improvement
 - used styled-components and it's theme configuration to demonstrate (can be extended more)
 - UI design is minimilistic which can always be extended to perfection 
 - Unit tests are not written
+
+![localhost_8082_ (3)](https://user-images.githubusercontent.com/4668780/142371062-663a1256-42ae-4bff-821f-98d843998b6c.png)
+![localhost_8082_ (1)](https://user-images.githubusercontent.com/4668780/142371049-4e9bebaf-74ce-4408-9e35-025bed9fd1dd.png)
+![localhost_8082_ (2)](https://user-images.githubusercontent.com/4668780/142371058-6195f52e-4af7-4829-9adc-4815003476b1.png)
+![localhost_8082_ (4)](https://user-images.githubusercontent.com/4668780/142371070-3da0c617-de4b-4b38-ae7a-0eae8ce45b06.png)
+![localhost_8082_ (5)](https://user-images.githubusercontent.com/4668780/142371072-7649a725-f3b1-415e-9bd5-3adf1b88839f.png)
+
