@@ -14,9 +14,12 @@ module.exports = {
     port: 8082,
     historyApiFallback: true,
     static: paths.public,
-    proxy: {
-      "/api": "http://localhost:8083",
-    },
+    proxy: [
+      {
+        context: ["/api"],
+        target: "http://localhost:8083",
+      },
+    ],
   },
   devtool: "source-map",
   mode: "development",

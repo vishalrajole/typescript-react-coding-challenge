@@ -14,34 +14,30 @@ export interface SelectProps {
 }
 
 const Select = ({
-    value = "",
-    label,
-    placeholder,
-    onChange,
-    options,
+  value = "",
+  label,
+  placeholder,
+  onChange,
+  options,
 }: SelectProps) => {
-    const onInputChange = (e: React.ChangeEvent<HTMLSelectElement>) => {
-        onChange(e.target.value);
-    };
+  const onInputChange = (e: React.ChangeEvent<HTMLSelectElement>) => {
+    onChange(e.target.value);
+  };
 
-    return (
-        <S.SelectWrapper>
-            <S.Label>{label}</S.Label>
-            <S.Select
-                placeholder={placeholder}
-                onChange={onInputChange}
-                value={value}
-            >
-                {options.map((option: Option) => {
-                    return (
-                        <option key={option.value} value={option.value}>
-                            {option.label}
-                        </option>
-                    );
-                })}
-            </S.Select>
-        </S.SelectWrapper>
-    );
+  return (
+    <S.SelectWrapper>
+      <S.Label>{label}</S.Label>
+      <S.Select onChange={onInputChange} value={value}>
+        {options.map((option: Option) => {
+          return (
+            <option key={option.value} value={option.value}>
+              {option.label}
+            </option>
+          );
+        })}
+      </S.Select>
+    </S.SelectWrapper>
+  );
 };
 
 export default Select;
